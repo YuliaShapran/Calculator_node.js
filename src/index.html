@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/style.css">
+	<title>File Processor</title>
+</head>
+<body>
+<div class="container">
+	<h1>Загрузите файл с числами</h1>
+	<input type="file" id="fileInput">
+	<button id="uploadButton">Загрузить</button>
+	<div id="buttons" style="display:none;">
+		<button id="meanButton">Среднее</button>
+		<button id="medianButton">Медиана</button>
+		<button id="maxButton">Наибольшее значение</button>
+		<button id="minButton">Наименьшее значение</button>
+		<button id="downloadButton">Скачать файл</button>
+	</div>
+	<div id="results"></div>
+	<div id="loader"></div>
+</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/file-saver"></script>
+	<script src="script.js"></script>
+</body>
+</html>
