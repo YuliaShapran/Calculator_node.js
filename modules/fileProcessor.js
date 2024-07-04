@@ -44,7 +44,6 @@ async function processFile(filePath) {
 		};
 
 		const resultFilePath = path.join(path.dirname(filePath), 'results.json');
-		console.log(resultFilePath);
 		await fs.writeFile(resultFilePath, JSON.stringify(result, null, 2));
 
 		return resultFilePath;

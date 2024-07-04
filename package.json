@@ -1,10 +1,32 @@
 {
+	"name": "file-processor",
+	"version": "1.0.0",
+	"description": "File processing app",
+	"main": "app.js",
+	"bin": "app.js",
+	"scripts": {
+		"start": "node app.js"
+	},
+
 	"dependencies": {
 		"express": "^4.19.2",
 		"file-saver": "^2.0.5",
 		"multer": "^1.4.5-lts.1"
 	},
 	"engines": {
-		"node": "20.11.0"
+		"node": "18.20.3"
+	},
+		"pkg": {
+		"scripts": [
+			"app.js",
+			"modules/**/*.js"
+		],
+		"assets": [
+			"src/**/*",
+			"uploads/**/*",
+			"results.txt"
+		],
+		"targets": [ "node18-win-x64" ],
+		"outputPath": "dist"
 	}
 }

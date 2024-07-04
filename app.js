@@ -23,7 +23,8 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 		return res.status(400).json({ error: 'No file uploaded' });
 	}
 
-	const filePath = path.join(__dirname, req.file.path);
+	
+	const filePath = path.join(process.cwd(), req.file.path);	
 	try {
 		resultFilePath = await processFile(filePath);
 		resultData = JSON.parse(await fs.readFile(resultFilePath, 'utf-8'));
@@ -45,7 +46,7 @@ app.get('/results', (req, res) => {
 
 app.get('/download', async (req, res) => {
 if (resultFilePath) {
-   try {
+	try {
       await downloadFile(res, resultFilePath);
       await fs.unlink(resultFilePath);
       resultFilePath = null;
